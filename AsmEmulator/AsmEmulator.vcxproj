@@ -138,12 +138,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GEN_Register.h" />
+    <ClInclude Include="Opcodes.h" />
+    <ClInclude Include="RAM.h" />
     <ClInclude Include="SFLAG_Register.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AsmEmulator.cpp" />
+    <ClCompile Include="GEN_Register.cpp" />
+    <ClCompile Include="Opcodes.cpp" />
+    <ClCompile Include="RAM.cpp" />
     <ClCompile Include="SFLAG_Register.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
