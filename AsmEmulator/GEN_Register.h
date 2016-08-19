@@ -12,4 +12,3 @@ public:
 	uint16_t getReg_16(std::string flagName);
 	uint32_t getReg_32(std::string flagName);
 };
-
