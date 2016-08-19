@@ -11,6 +11,8 @@
 int main()
 {
 	std::cout << "AsmEmulator v0.1" << std::endl;
+	std::cout << "Initializing RAMDISK." << std::endl;
+	RAM *ram = new RAM();
 	//////////////////////////////////////////////////////
 	// Temporary testing code - remove in final release //
 	std::string cmdHolder;
@@ -20,7 +22,7 @@ int main()
 		std::cout << "> ";
 		while (true)
 		{
-			std::cin >> cmdHolder;
+			std::getline(std::cin, cmdHolder);
 			if (cmdHolder == "")
 			{
 				continue;
@@ -30,9 +32,30 @@ int main()
 				break;
 			}
 		}
-		std::cout << std::endl;
 		std::vector<std::string> splitCommand = StringHelpers::split(cmdHolder, ' ');
-		Opcodes::run(nullptr, nullptr, nullptr, splitCommand);
+		if (splitCommand[0] == "exit")
+		{
+			break;
+		}
+		else if (splitCommand[0] == "dumpmem")
+		{
+			for (int i = 0; i < 5; i++)
+			{
+				for (int j = 0; j < 20; j++)
+				{
+					printf("%X ", ram->read8Bits((i * 20) + j));
+				}
+				std::cout << std::endl;
+			}
+		}
+		else if (splitCommand[0] == "writemem-8i")
+		{
+			ram->write8Bits(StringHelpers::stringToNumber(splitCommand[1]), StringHelpers::stringToNumber(splitCommand[2]));
+		}
+		else
+		{
+			//Opcodes::run(nullptr, nullptr, *ram, splitCommand);
+		}
 	}
 	//////////////////////////////////////////////////////
 	return 0;

@@ -3,17 +3,24 @@
 
 using namespace std;
 
-void StringHelpers::split(const string &s, char delim, vector<string> &elems) {
-	stringstream ss(s);
-	string item;
-	while (getline(ss, item, delim)) {
-		elems.push_back(item);
+std::vector<std::string> StringHelpers::split(const std::string &text, char sep) {
+	std::vector<std::string> tokens;
+	std::size_t start = 0, end = 0;
+	while ((end = text.find(sep, start)) != std::string::npos) {
+		tokens.push_back(text.substr(start, end - start));
+		start = end + 1;
 	}
+	tokens.push_back(text.substr(start));
+	return tokens;
 }
 
-
-vector<string> StringHelpers::split(const string &s, char delim) {
-	vector<string> elems;
-	split(s, delim, elems);
-	return elems;
+int StringHelpers::stringToNumber(string s)
+{
+	istringstream convert(s);
+	int result;
+	if (!(convert >> result))
+	{
+		result = 0;
+	}
+	return result;
 }
