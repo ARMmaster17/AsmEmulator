@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-static class Opcodes
+class Opcodes
 {
 public:
 	static void run(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem, std::vector<std::string> &cmd);
