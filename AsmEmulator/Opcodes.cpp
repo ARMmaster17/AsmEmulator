@@ -1,19 +1,48 @@
 #include "stdafx.h"
 #include "Opcodes.h"
 
-void Opcodes::AAA(SFLAG_Register * sfr, GEN_Register * gr, RAM * mem)
+void Opcodes::run(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem, std::vector<std::string> &cmd)
 {
-	if (((gr->getReg_8("AL")/* && 0FH*/) > 9) || (sfr->getFlag("AF") == 1))
+	// Get the numeric opcode
+	uint8_t opcodeNumber = Opcodes::getHexOpcode(cmd[0]);
+	if (opcodeNumber == 0x0)
 	{
-		gr->setReg_8("AL", (gr->getReg_8("AL") + 6)/* && 0FH*/);
+		return;
 	}
-	else
+	switch (opcodeNumber)
 	{
-		sfr->setFlag("SF", 0);
-		sfr->setFlag("AF", 0);
+	case 0x37:
+		AAA(sfr, gr, mem, cmd);
+	default:
+		break;
 	}
 }
 
-void Opcodes::AAD(SFLAG_Register * sfr, GEN_Register * gr, RAM * mem)
+uint8_t Opcodes::getHexOpcode(std::string opcode)
 {
+	if (opcode == "AAA")
+	{
+		return 0x37;
+	}
+	else if (opcode == "MOV")
+	{
+		return 0xA4;
+	}
+	else
+	{
+		return 0x0;
+	}
+}
+
+void Opcodes::AAA(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem, std::vector<std::string> &cmd)
+{
+	if (((gr.getReg_8("AL") && 0x0F) > 9) || (sfr.getFlag("AF") == 1))
+	{
+		gr.setReg_8("AL", (gr.getReg_8("AL") + 6) && 0x0F);
+	}
+	else
+	{
+		sfr.setFlag("SF", 0);
+		sfr.setFlag("AF", 0);
+	}
 }

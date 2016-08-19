@@ -4,12 +4,37 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
+#include <vector>
+#include "StringHelpers.h"
+#include "Opcodes.h"
 
 int main()
 {
 	std::cout << "AsmEmulator v0.1" << std::endl;
-	std::string exitBuffer;
-	std::cin >> exitBuffer;
+	//////////////////////////////////////////////////////
+	// Temporary testing code - remove in final release //
+	std::string cmdHolder;
+	while (true)
+	{
+		cmdHolder = "";
+		std::cout << "> ";
+		while (true)
+		{
+			std::cin >> cmdHolder;
+			if (cmdHolder == "")
+			{
+				continue;
+			}
+			else
+			{
+				break;
+			}
+		}
+		std::cout << std::endl;
+		std::vector<std::string> splitCommand = StringHelpers::split(cmdHolder, ' ');
+		Opcodes::run(nullptr, nullptr, nullptr, splitCommand);
+	}
+	//////////////////////////////////////////////////////
 	return 0;
 }
 
