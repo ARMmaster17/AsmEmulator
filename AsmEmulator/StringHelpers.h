@@ -6,6 +6,6 @@ class StringHelpers
 {
 public:
 	static std::vector<std::string> split(const std::string &text, char sep);
-	static stringToNumber(std::string s);
+	static int stringToNumber(std::string s);
 };
 
