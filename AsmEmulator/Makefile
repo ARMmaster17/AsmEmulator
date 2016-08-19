@@ -15,10 +15,10 @@ LDFLAGS += $(foreach library,$(program_LIBRARIES),-l$(library))
 all: $(program_NAME)
 
 $(program_NAME): $(program_OBJS)
-    $(LINK.cxx) $(program_OBJS) -o $(program_NAME)
+	$(LINK.cxx) $(program_OBJS) -o $(program_NAME)
 
 clean:
-    @- $(RM) $(program_NAME)
-    @- $(RM) $(program_OBJS)
+	@- $(RM) $(program_NAME)
+	@- $(RM) $(program_OBJS)
 
 distclean: clean
