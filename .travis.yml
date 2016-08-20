@@ -1,13 +1,18 @@
 language: cpp
-sudo: required
+#sudo: required
 os:
 - linux
-- osx
+#- osx
+addons:
+  apt:
+    packages:
+      - doxygen
 branches:
   only:
   - master
-install:
-  - ./scripts/install_deps.sh
+#install:
+#  - ./scripts/install_deps.sh
 script:
   - cmake ./
   - make
+  - doxygen ./Doxyfile
