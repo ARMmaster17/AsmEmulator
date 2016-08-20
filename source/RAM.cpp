@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "RAM.h"
+#include "../include/stdafx.h"
+#include "../include/RAM.h"
 
 uint8_t memory[1000];
 

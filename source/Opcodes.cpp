@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "Opcodes.h"
+#include "../include/stdafx.h"
+#include "../include/Opcodes.h"
 
 void Opcodes::run(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem, std::vector<std::string> &cmd)
 {

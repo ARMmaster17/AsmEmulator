@@ -1,7 +1,13 @@
 language: cpp
+sudo: required
+os:
+- linux
+- osx
 branches:
   only:
   - master
+install:
+  - ./scripts/install_deps.sh
 script:
-  - cd ./AsmEmulator
+  - cmake ./
   - make
