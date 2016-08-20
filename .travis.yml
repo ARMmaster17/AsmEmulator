@@ -1,6 +1,11 @@
 language: cpp
+os:
+- linux
+- osx
 branches:
   only:
   - master
+install:
+  - ./scripts/install_deps.sh
 script:
   - cmake
