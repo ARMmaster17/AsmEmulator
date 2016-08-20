@@ -13,6 +13,8 @@ int main()
 	std::cout << "AsmEmulator v0.1" << std::endl;
 	std::cout << "Initializing RAMDISK." << std::endl;
 	RAM *ram = new RAM();
+	GEN_Register *gen = new GEN_Register();
+	SFLAG_Register *sflag = new SFLAG_Register();
 	//////////////////////////////////////////////////////
 	// Temporary testing code - remove in final release //
 	std::string cmdHolder;
@@ -54,10 +56,9 @@ int main()
 		}
 		else
 		{
-			//Opcodes::run(nullptr, nullptr, *ram, splitCommand);
+			Opcodes::run(*sflag, *gen, *ram, splitCommand);
 		}
 	}
 	//////////////////////////////////////////////////////
 	return 0;
 }
-
