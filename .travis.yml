@@ -9,4 +9,4 @@ branches:
 install:
   - ./scripts/install_deps.sh
 script:
-  - cmake
+  - cmake ./
