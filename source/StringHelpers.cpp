@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// Splits a string using a specified delimiter character.
 std::vector<std::string> StringHelpers::split(const std::string &text, char sep) {
 	std::vector<std::string> tokens;
 	std::size_t start = 0, end = 0;
@@ -14,6 +15,7 @@ std::vector<std::string> StringHelpers::split(const std::string &text, char sep)
 	return tokens;
 }
 
+// Converts a string to an integer. Returns 0 if no numeric value present.
 int StringHelpers::stringToNumber(string s)
 {
 	istringstream convert(s);

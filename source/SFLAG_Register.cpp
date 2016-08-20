@@ -1,20 +1,19 @@
 #include "../include/stdafx.h"
 #include "../include/SFLAG_Register.h"
 
-
-
-
+// Default class constructor.
 SFLAG_Register::SFLAG_Register()
 {
 	
 }
 
-
+// Default class destructor.
 SFLAG_Register::~SFLAG_Register()
 {
 
 }
 
+// Sets the value of a flag in the SFLAG register.
 void SFLAG_Register::setFlag(std::string flagName, bool value)
 {
 	if (flagName == "CF") setFlag(0, value);
@@ -34,11 +33,13 @@ void SFLAG_Register::setFlag(std::string flagName, bool value)
 	}
 }
 
+// Sets the value of a flag based on it's bit location in the SFLAG register.
 void SFLAG_Register::setFlag(uint16_t bitLocation, bool value)
 {
 	registerStore[bitLocation] = value;
 }
 
+// Gets the value of a flag from he SFLAG register.
 bool SFLAG_Register::getFlag(std::string flagName)
 {
 	if (flagName == "CF") return getFlag(0);
@@ -60,6 +61,7 @@ bool SFLAG_Register::getFlag(std::string flagName)
 	}
 }
 
+// Gets the value of a flag in the SFLAG register.
 bool SFLAG_Register::getFlag(uint16_t bitLocation)
 {
 	return registerStore[bitLocation];
