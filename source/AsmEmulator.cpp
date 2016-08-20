@@ -1,12 +1,12 @@
 // AsmEmulator.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
+#include "../include/stdafx.h"
 #include <iostream>
 #include <string>
 #include <vector>
-#include "StringHelpers.h"
-#include "Opcodes.h"
+#include "../include/StringHelpers.h"
+#include "../include/Opcodes.h"
 
 int main()
 {

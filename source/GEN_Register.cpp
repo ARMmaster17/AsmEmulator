@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "GEN_Register.h"
+#include "../include/stdafx.h"
+#include "../include/GEN_Register.h"
 
 GEN_Register::GEN_Register()
 {

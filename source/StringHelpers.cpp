@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "StringHelpers.h"
+#include "../include/stdafx.h"
+#include "../include/StringHelpers.h"
 
 using namespace std;
 
