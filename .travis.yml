@@ -10,3 +10,4 @@ install:
   - ./scripts/install_deps.sh
 script:
   - cmake ./
+  - make
