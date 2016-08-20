@@ -16,6 +16,8 @@ int main()
 	// Load in a new RAMDISK.
 	std::cout << "Initializing RAMDISK." << std::endl;
 	RAM *ram = new RAM();
+	GEN_Register *gen = new GEN_Register();
+	SFLAG_Register *sflag = new SFLAG_Register();
 	//////////////////////////////////////////////////////
 	// Temporary testing code - remove in final release //
 	// Holder for command input.
@@ -68,10 +70,9 @@ int main()
 			// Treat command as an opcode.
 		else
 		{
-			//Opcodes::run(nullptr, nullptr, *ram, splitCommand);
+			Opcodes::run(*sflag, *gen, *ram, splitCommand);
 		}
 	}
 	//////////////////////////////////////////////////////
 	return 0;
 }
-
