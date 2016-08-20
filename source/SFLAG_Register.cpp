@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "SFLAG_Register.h"
+#include "../include/stdafx.h"
+#include "../include/SFLAG_Register.h"
 
 
 

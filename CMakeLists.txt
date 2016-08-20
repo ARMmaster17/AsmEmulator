@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 2.8)
 project(AsmEmulator)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
-set(SOURCE_FILES ./AsmEmulator/AsmEmulator.cpp ./AsmEmulator/GEN_Register.cpp ./AsmEmulator/Opcodes.cpp ./AsmEmulator/RAM.cpp ./AsmEmulator/SFLAG_Register.cpp ./AsmEmulator/stdafx.cpp ./AsmEmulator/StringHelpers.cpp ./AsmEmulator/targetver.h)
+set(SOURCE_FILES source/AsmEmulator.cpp source/GEN_Register.cpp source/Opcodes.cpp source/RAM.cpp source/SFLAG_Register.cpp source/stdafx.cpp source/StringHelpers.cpp include/targetver.h)
 add_executable(AsmEmulator ${SOURCE_FILES})
