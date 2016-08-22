@@ -2,7 +2,7 @@
 if ( test "`uname -s`" = "Darwin" )
 then
   brew update
-  brew install cmake
+  brew install cmake doxygen
   echo
 else
   sudo add-apt-repository --yes ppa:kalakris/cmake
