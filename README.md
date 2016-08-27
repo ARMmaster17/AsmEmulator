@@ -7,4 +7,5 @@ Basic Intel 80386 (i386) Emulator in C++.
 Because I can.
 
 ## Can I help?
-[Start reading.](http://microsym.com/editor/assets/386intel.pdf)
+1. [Start reading.](http://microsym.com/editor/assets/386intel.pdf)
+2. [Start contributing.](https://github.com/ARMmaster17/AsmEmulator/blob/master/CONTRIBUTING.md)
