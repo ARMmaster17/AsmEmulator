@@ -61,6 +61,41 @@ int main()
 				std::cout << std::endl;
 			}
 		}
+			// Dump all values in the registry.
+			else if (splitCommand[0] == "dumpgenregs")
+		{
+			printf("AL: %X", gen->getReg_8("AL"));
+            printf("AH: %X", gen->getReg_8("AH"));
+            printf("AX: %X", gen->getReg_16("AX"));
+            printf("EAX: %X", gen->getReg_32("EAX"));
+
+            printf("DL: %X", gen->getReg_8("DL"));
+            printf("DH: %X", gen->getReg_8("DH"));
+            printf("DX: %X", gen->getReg_16("DX"));
+            printf("EDX: %X", gen->getReg_32("EDX"));
+
+            printf("CL: %X", gen->getReg_8("CL"));
+            printf("CH: %X", gen->getReg_8("CH"));
+            printf("CX: %X", gen->getReg_16("CX"));
+            printf("ECX: %X", gen->getReg_32("ECX"));
+
+            printf("BL: %X", gen->getReg_8("BL"));
+            printf("BH: %X", gen->getReg_8("BH"));
+            printf("BX: %X", gen->getReg_16("BX"));
+            printf("EBX: %X", gen->getReg_32("EBX"));
+
+            printf("BP: %X", gen->getReg_16("BP"));
+            printf("EBP: %X", gen->getReg_32("EBP"));
+
+            printf("SI: %X", gen->getReg_16("SI"));
+            printf("ESI: %X", gen->getReg_32("ESI"));
+
+            printf("DI: %X", gen->getReg_16("DI"));
+            printf("EDI: %X", gen->getReg_32("EDI"));
+
+            printf("SP: %X", gen->getReg_16("SP"));
+            printf("ESP: %X", gen->getReg_32("ESP"));
+		}
 			// Write an 8-bit value to memory.
 		else if (splitCommand[0] == "writemem-8i")
 		{
