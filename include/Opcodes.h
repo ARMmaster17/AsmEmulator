@@ -11,6 +11,7 @@ public:
 	static void run(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem, std::vector<std::string> &cmd);
 	static uint8_t getHexOpcode(std::string opcode);
 	static void AAA(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem, std::vector<std::string> &cmd);
-	static void AAD(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem);
+
+	static void ADD(SFLAG_Register &sfr, GEN_Register &gr, RAM &mem, std::vector<std::string> &cmd);
 };
 

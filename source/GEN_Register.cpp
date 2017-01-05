@@ -43,32 +43,28 @@ void GEN_Register::setReg_8(std::string flagName, uint8_t value)
 	if (flagName == "AL")
 	{
 		AL = std::bitset<8>(value);
-	}
-	else if (flagName == "AX")
+	} else if (flagName == "AH")
 	{
 		AH = std::bitset<8>(value);
 	}
     else if (flagName == "DL")
     {
         DL = std::bitset<8>(value);
-    }
-    else if (flagName == "DX")
+    } else if (flagName == "DH")
     {
         DH = std::bitset<8>(value);
     }
     else if (flagName == "CL")
     {
         CL = std::bitset<8>(value);
-    }
-    else if (flagName == "CX")
+    } else if (flagName == "CH")
     {
         CH = std::bitset<8>(value);
     }
     else if (flagName == "BL")
     {
         BL = std::bitset<8>(value);
-    }
-    else if (flagName == "BX")
+    } else if (flagName == "BH")
     {
         BH = std::bitset<8>(value);
     }
